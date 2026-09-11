@@ -1,0 +1,577 @@
+\documentclass[landscape,12pt,a4paper]{article}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+% ============================================================
+% PAGE SETUP
+% ============================================================
+\geometry{
+    landscape,
+    a4paper,
+    left=1.2cm,
+    right=1.2cm,
+    top=0.85cm,
+    bottom=0.85cm
+}
+
+% ============================================================
+% COLORS
+% ============================================================
+\definecolor{titleBlue}{RGB}{0,48,135}
+\definecolor{darkGray}{RGB}{80,80,80}
+\definecolor{calloutRed}{RGB}{210,35,35}
+
+% ============================================================
+% PARAGRAPH / LINE BREAK SETTINGS
+% ============================================================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=2em
+
+% ============================================================
+% SECTION FORMAT
+% ============================================================
+\titleformat
+    {\section}
+    {\Large\bfseries\color{titleBlue}}
+    {}
+    {0pt}
+    {}
+
+% ============================================================
+% HYPERLINK SETUP
+% ============================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=titleBlue,
+    urlcolor=titleBlue
+}
+
+% ============================================================
+% FOOTER
+% ============================================================
+\newcommand{\footertext}{
+    Department of Computer Science, University of Sindh
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+\begin{document}
+
+
+% ============================================================
+% PAGE 1: TITLE PAGE
+% ============================================================
+\begin{titlepage}
+
+    \centering
+
+    \vspace*{0.35cm}
+
+    \includegraphics[
+        width=0.95\textwidth,
+        height=0.80\textheight,
+        keepaspectratio
+    ]{Assignment Title Page.png}
+
+    \vfill
+
+    {\small\color{darkGray}\footertext}
+
+\end{titlepage}
+
+
+% ============================================================
+% PAGE 2: HCI SCREENSHOT
+% ============================================================
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\begin{center}
+
+    {\Large\bfseries\color{titleBlue}
+    SCREENSHOT 1: HCI FOCUS}
+
+    \vspace{0.06cm}
+
+    \rule{0.80\textwidth}{0.5pt}
+
+    \vspace{0.10cm}
+
+\end{center}
+
+
+% ============================================================
+% HCI SCREENSHOT + DIRECT CALLOUTS
+% ============================================================
+\begin{center}
+
+\begin{tikzpicture}
+
+% ------------------------------------------------------------
+% HCI IMAGE
+% ------------------------------------------------------------
+\node[
+    inner sep=0pt,
+    outer sep=0pt
+] (hciimage) at (0,0)
+{
+    \includegraphics[
+        width=0.77\textwidth
+    ]{HCI.png}
+};
+
+
+% ============================================================
+% HCI CALLOUT 1
+% SEARCH BAR
+% ============================================================
+
+\node[
+    circle,
+    fill=calloutRed,
+    draw=white,
+    line width=1.2pt,
+    minimum size=0.68cm,
+    inner sep=0pt,
+    text=white,
+    font=\bfseries\large
+] (hciOne) at (-7.75,3.78) {1};
+
+\draw[
+    ->,
+    >=stealth,
+    very thick,
+    calloutRed,
+    line width=1.45pt
+]
+(hciOne) -- (-6.20,3.42);
+
+
+% ============================================================
+% HCI CALLOUT 2
+% 3D NAVIGATION CONTROLS
+% ============================================================
+
+\node[
+    circle,
+    fill=calloutRed,
+    draw=white,
+    line width=1.2pt,
+    minimum size=0.68cm,
+    inner sep=0pt,
+    text=white,
+    font=\bfseries\large
+] (hciTwo) at (8.55,-3.58) {2};
+
+\draw[
+    ->,
+    >=stealth,
+    very thick,
+    calloutRed,
+    line width=1.45pt
+]
+(hciTwo) -- (7.45,-3.55);
+
+
+% ============================================================
+% HCI CALLOUT 3
+% INFORMATION PANEL
+% ============================================================
+
+\node[
+    circle,
+    fill=calloutRed,
+    draw=white,
+    line width=1.2pt,
+    minimum size=0.68cm,
+    inner sep=0pt,
+    text=white,
+    font=\bfseries\large
+] (hciThree) at (8.55,0.70) {3};
+
+\draw[
+    ->,
+    >=stealth,
+    very thick,
+    calloutRed,
+    line width=1.45pt
+]
+(hciThree) -- (6.55,0.70);
+
+\end{tikzpicture}
+
+\end{center}
+
+
+\vspace{0.04cm}
+
+
+% ============================================================
+% HCI EXPLANATIONS
+% ============================================================
+\begin{enumerate}[
+    label=\textbf{\arabic*.},
+    leftmargin=0.85cm,
+    rightmargin=0.45cm,
+    nosep,
+    itemsep=0.07cm
+]
+
+    \item
+    \textbf{Search Bar (Top-Left):}
+    Allows users to quickly search for any location worldwide.
+    The autocomplete feature provides instant suggestions,
+    reducing typing effort and helping users find destinations faster.
+
+    \item
+    \textbf{3D Navigation Controls (Bottom-Right):}
+    Includes zoom slider, rotate, and compass tools that let users
+    explore the 3D environment from any angle. These controls
+    provide clear affordances for manipulating the view.
+
+    \item
+    \textbf{Information Panel (Right-Side):}
+    Displays detailed information about the selected location
+    including name, description, coordinates, and save options.
+    This provides immediate contextual feedback to users.
+
+\end{enumerate}
+
+
+% ============================================================
+% PAGE 3: CG SCREENSHOT
+% ============================================================
+\newpage
+
+\begin{center}
+
+    {\Large\bfseries\color{titleBlue}
+    SCREENSHOT 2: CG FOCUS}
+
+    \vspace{0.06cm}
+
+    \rule{0.80\textwidth}{0.5pt}
+
+    \vspace{0.10cm}
+
+\end{center}
+
+
+% ============================================================
+% CG SCREENSHOT + DIRECT CALLOUTS
+% ============================================================
+\begin{center}
+
+\begin{tikzpicture}
+
+% ------------------------------------------------------------
+% CG IMAGE
+% ------------------------------------------------------------
+\node[
+    inner sep=0pt,
+    outer sep=0pt
+] (cgimage) at (0,0)
+{
+    \includegraphics[
+        width=0.77\textwidth
+    ]{CG.png}
+};
+
+
+% ============================================================
+% CG CALLOUT 1
+% 3D MESH GEOMETRY
+% ============================================================
+
+\node[
+    circle,
+    fill=calloutRed,
+    draw=white,
+    line width=1.2pt,
+    minimum size=0.68cm,
+    inner sep=0pt,
+    text=white,
+    font=\bfseries\large
+] (cgOne) at (-7.75,3.78) {1};
+
+\draw[
+    ->,
+    >=stealth,
+    very thick,
+    calloutRed,
+    line width=1.45pt
+]
+(cgOne) -- (-3.35,1.35);
+
+
+% ============================================================
+% CG CALLOUT 2
+% TEXTURE MAPPING
+% ============================================================
+
+\node[
+    circle,
+    fill=calloutRed,
+    draw=white,
+    line width=1.2pt,
+    minimum size=0.68cm,
+    inner sep=0pt,
+    text=white,
+    font=\bfseries\large
+] (cgTwo) at (-7.75,-3.58) {2};
+
+\draw[
+    ->,
+    >=stealth,
+    very thick,
+    calloutRed,
+    line width=1.45pt
+]
+(cgTwo) -- (-4.20,-2.10);
+
+
+% ============================================================
+% CG CALLOUT 3
+% LIGHTING AND SHADOWS
+% ============================================================
+
+\node[
+    circle,
+    fill=calloutRed,
+    draw=white,
+    line width=1.2pt,
+    minimum size=0.68cm,
+    inner sep=0pt,
+    text=white,
+    font=\bfseries\large
+] (cgThree) at (8.55,3.35) {3};
+
+\draw[
+    ->,
+    >=stealth,
+    very thick,
+    calloutRed,
+    line width=1.45pt
+]
+(cgThree) -- (3.20,-0.70);
+
+\end{tikzpicture}
+
+\end{center}
+
+
+\vspace{0.04cm}
+
+
+% ============================================================
+% CG EXPLANATIONS
+% ============================================================
+\begin{enumerate}[
+    label=\textbf{\arabic*.},
+    leftmargin=0.85cm,
+    rightmargin=0.45cm,
+    nosep,
+    itemsep=0.07cm
+]
+
+    \item
+    \textbf{3D Mesh Geometry:}
+    The Burj Khalifa is rendered as a detailed 3D mesh structure
+    with precise geometry. This creates a realistic representation
+    of the world's tallest building in 3D space.
+
+    \item
+    \textbf{Texture Mapping:}
+    High-resolution satellite textures are mapped onto the ground
+    surface, lake, and surrounding areas. This provides realistic
+    visual context of the Dubai landscape.
+
+    \item
+    \textbf{Lighting \& Shadows:}
+    Dynamic lighting simulates the sun's position, creating realistic
+    shadows on the building and surrounding area. This enhances
+    depth perception and makes the 3D scene more immersive.
+
+\end{enumerate}
+
+
+% ============================================================
+% PAGE 4: REFLECTION QUESTIONS
+% ============================================================
+\newpage
+
+\begin{center}
+
+    {\Large\bfseries\color{titleBlue}
+    REFLECTION QUESTIONS}
+
+    \vspace{0.06cm}
+
+    \rule{0.80\textwidth}{0.5pt}
+
+    \vspace{0.15cm}
+
+\end{center}
+
+
+% ============================================================
+% QUESTION 1
+% ============================================================
+\section*{Question 1:}
+
+\textbf{
+How does the Computer Graphics quality (e.g., realistic lighting
+or 3D view) help or hinder the user's ability to interact with
+the software?
+}
+
+\vspace{0.12cm}
+
+\justifying
+
+The high-quality computer graphics in Google Earth, including
+realistic lighting, detailed 3D geometry, and texture mapping,
+significantly enhance the user's ability to navigate and understand
+spatial relationships. The visual realism makes it easier to
+recognize landmarks and orient oneself in the 3D space, which
+directly supports effective interaction. However, rendering these
+complex graphics requires substantial processing power, which can
+lead to performance lag on older or less powerful devices, hindering
+smooth interaction.
+
+
+\vspace{0.30cm}
+
+
+% ============================================================
+% QUESTION 2
+% ============================================================
+\section*{Question 2:}
+
+\textbf{
+What is one simple HCI change you would make to improve the
+user interface?
+}
+
+\vspace{0.12cm}
+
+\justifying
+
+One simple but effective HCI improvement would be to add a
+customizable ``Quick Actions'' toolbar that allows users to pin
+their most frequently used tools. Currently, essential tools like
+measuring distance, switching to street view, and toggling 3D
+buildings are buried deep within menus, requiring multiple clicks
+to access. A pinned toolbar would allow users to access these tools
+with a single click, significantly reducing interaction cost and
+improving efficiency.
+
+
+\vspace{0.30cm}
+
+
+% ============================================================
+% GRADING TABLE
+% ============================================================
+\begin{table}[H]
+
+    \centering
+
+    \renewcommand{\arraystretch}{1.18}
+
+    \small
+
+    \begin{tabular}{|
+        >{\bfseries}p{3.7cm}|
+        p{8.4cm}|
+        >{\centering\arraybackslash}p{2cm}|
+    }
+
+        \hline
+
+        \textbf{Component}
+        &
+        \textbf{Requirement}
+        &
+        \textbf{Points}
+        \\
+
+        \hline
+
+        HCI Annotation
+        &
+        Correctly identifies 3 interaction/UI elements and their
+        usability purpose.
+        &
+        35
+        \\
+
+        \hline
+
+        CG Annotation
+        &
+        Correctly identifies 3 graphics/rendering elements
+        (light, mesh, camera, etc.).
+        &
+        35
+        \\
+
+        \hline
+
+        Reflection
+        &
+        Clear, concise answers connecting graphics rendering
+        to user experience.
+        &
+        20
+        \\
+
+        \hline
+
+        Clarity \& Layout
+        &
+        Clean screenshot layout with easily readable
+        callouts/pointers.
+        &
+        10
+        \\
+
+        \hline
+
+    \end{tabular}
+
+\end{table}
+
+
+% ============================================================
+% FOOTER
+% ============================================================
+\vfill
+
+\begin{center}
+    {\small\color{darkGray}\footertext}
+\end{center}
+
+
+% ============================================================
+% END DOCUMENT
+% ============================================================
+\end{document}
