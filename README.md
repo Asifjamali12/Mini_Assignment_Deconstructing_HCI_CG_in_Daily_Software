@@ -1,0 +1,2 @@
+# Mini_Assignment_Deconstructing_HCI_CG_in_Daily_Software
+HCI And CG Mini Assignment
